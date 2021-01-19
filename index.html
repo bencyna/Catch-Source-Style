@@ -2,14 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Catch Source Style</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
+    <nav class="navbar" id="header">
+        <!-- Navbar brand -->
+        <h3 class="title">CATCH SOURCE STYLING</h3>
+        <img src="./assets/img/css-logo.png" alt="Catch Source Style Logo" class="logoImage" />
 
+
+
+        <!-- Navbar form (inline form) -->
+        <form class="form-inline d-none d-md-flex ml-auto" action="..." method="...">
+            <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+
+            <button class="btn btn-primary" type="submit">Clear Colours</button>
+        </form>
+        <!-- Navbar content (with the dropdown menu) -->
+        <div class="navbar-content d-md-none ml-auto">
+            <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+            <div class="dropdown with-arrow">
+                <button class="btn" data-toggle="dropdown" type="button" id="navbar-dropdown-toggle-btn-1">
+                    Menu
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right w-200" aria-labelledby="navbar-dropdown-toggle-btn-1">
+                    <!-- w-200 = width: 20rem (200px) -->
+                    <a href="#" class="dropdown-item">Docs</a>
+                    <a href="#" class="dropdown-item">Products</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-content">
+                        <form action="..." method="...">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email address"
+                                    required="required" />
+                            </div>
+                            <button class="btn btn-primary btn-block" type="submit">
+                                Sign up
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="input"></div>
+    <!-- <input
+          type="text"
+          class="form-control"
+          placeholder="Email address"
+          required="required"
+        /> -->
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg colBox" id="colMain">
+                    <div class="uploadImage">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                        Select image to upload:
+                        <!-- <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload Image" name="submit"> -->
+                    </div>
+                </div>
+                <div class="col-2 history colBox" id="colHistory">Third column</div>
+            </div>
+        </div>
+    </main>
+    <script>
+        src = "script.js";
+    </script>
 </body>
 
 </html>
