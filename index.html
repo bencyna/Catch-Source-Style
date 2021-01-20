@@ -68,18 +68,42 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg colBox" id="colMain">
-                    <div class="uploadImage">
-                        <form action="upload.php" method="post" enctype="multipart/form-data">
-                        Select image to upload:
-                        <!-- <input type="file" name="fileToUpload" id="fileToUpload">
-                        <input type="submit" value="Upload Image" name="submit"> -->
+                    <div class="row" id="select">
+                        <div class="uploadImage">
+                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                            Select image to upload:
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="submit" value="Upload Image" name="submit">
+                        </div>
+                    </div>
+                    <div class="row" id="displayResults">
+                        <div class="dropdown" id="dropdown-fonts">
+                            <button class="btn" data-toggle="dropdown" type="button" id="dropdown-toggle-btn-1" aria-haspopup="true" aria-expanded="false">
+                            class of dropdown = 'fonts' <i class="fa fa-angle-down ml-5" aria-hidden="true"></i> <!-- ml-5 = margin-left: 0.5rem (5px) -->
+                            </button>
+                            <div class="dropdown-menu fonts" aria-labelledby="dropdown-toggle-btn-1">
+                                <h6 class="dropdown-header">Header</h6>
+                                <a href="#" class="dropdown-item">class = "dropdown-item"</a>
+                                <a href="#" class="dropdown-item">"dropdown-item"</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-content">
+                                    <button class="btn btn-block" type="button">Button</button>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="colourDisplay">
+                            <!-- will delete br, there as a placeHolder for colours to be appened -->
+                            <br>  "class = colourDisplay  " <br>
+                            <img src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="col-2 history colBox" id="colHistory">Third column</div>
             </div>
         </div>
     </main>
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js">
         src = "script.js";
     </script>
 </body>
