@@ -1,120 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Catch Source Style</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap"
-        rel="stylesheet" />
-        
-        <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src = "script.js"></script>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CATCH SOURCE STYLE</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar" id="header">
-        <!-- Navbar brand -->
-        <h3 class="title">CATCH SOURCE STYLING</h3>
-        <img src="./assets/img/css-logo.png" alt="Catch Source Style Logo" class="logoImage" />
-
-
-
-        <!-- Navbar form (inline form) -->
-        <form class="form-inline d-none d-md-flex ml-auto" action="..." method="...">
-            <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
-
-            <button class="btn btn-primary" type="submit">Clear Colours</button>
-        </form>
-        <!-- Navbar content (with the dropdown menu) -->
-        <div class="navbar-content d-md-none ml-auto">
-            <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
-            <div class="dropdown with-arrow">
-                <button class="btn" data-toggle="dropdown" type="button" id="navbar-dropdown-toggle-btn-1">
-                    Menu
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right w-200" aria-labelledby="navbar-dropdown-toggle-btn-1">
-                    <!-- w-200 = width: 20rem (200px) -->
-                    <a href="#" class="dropdown-item">Docs</a>
-                    <a href="#" class="dropdown-item">Products</a>
-                    <div class="dropdown-divider"></div>
-                    <div class="dropdown-content">
-                        <form action="..." method="...">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email address"
-                                    required="required" />
-                            </div>
-                            <button class="btn btn-primary btn-block" type="submit">
-                                Sign up
-                            </button>
-                        </form>
-                    </div>
-                </div>
+    <!-- Navbar -->
+    <section class="section">
+        <nav class="navbar is-transparent is-justify-content-center">
+            <div class="navbar-item">
+                <p class="control">
+                    <a class="button is-large is-primary is-rounded ">
+                        </span>
+                        <span><b>CATCH SOURCE STYLE</b></span>
+                    </a>
+                </p>
             </div>
-        </div>
-    </nav>
-    <div class="input"></div>
-    <!-- <input
-          type="text"
-          class="form-control"
-          placeholder="Email address"
-          required="required"
-        /> -->
+        </nav>
 
-    <main>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg colBox" id="colMain">
-                    <div class="row" id="select">
-                        <div class="uploadImage">
-                            <form action="upload.php" method="post" enctype="multipart/form-data">
-                            Select image to upload:
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" value="Upload Image" name="submit">
+        <!-- Page Body -->
+        <div class="container is-max-widescreen" id="mainBody">
+            <!-- Opening section -->
+            <section class="hero is-info is-bold">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-half has-background-primary bar is-bold">
+                                <h2 class="title is-3 pl-5 has-text-left"><i>Pick your Text & <b>Catch</b> your
+                                        font.</i></h2>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="columns">
+                            <div class="column is-three-quarters has-background-primary bar is-bold">
+                                <h2 class="title is-3 pl-5 has-text-centered"><i>Pick Your Image & get <b>Source</b>
+                                        color palette.</i></h2>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="columns">
+                            <div class="column is-full has-background-primary bar is-bold">
+                                <h2 class="title is-3 pl-5 has-text-right"><i>See how they look together & <b>Style</b>
+                                        your page.</i></h2>
+                            </div>
                         </div>
                     </div>
-                    <div class="row" id="displayResults">
-                        <div class="dropdown" id="dropdown-fonts">
-                            <button class="btn" data-toggle="dropdown" type="button" id="dropdown-toggle-btn-1" aria-haspopup="true" aria-expanded="false">
-                            class of dropdown = 'fonts' <i class="fa fa-angle-down ml-5" aria-hidden="true"></i> <!-- ml-5 = margin-left: 0.5rem (5px) -->
-                            </button>
-                            <div class="dropdown-menu" id="fonts" aria-labelledby="dropdown-toggle-btn-1">
-                                <h6 class="dropdown-header">Header</h6>
-                                <a href="#" class="dropdown-item">class = "dropdown-item"</a>
-                                <a href="#" class="dropdown-item">"dropdown-item"</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="dropdown-content">
-                                    <button class="btn btn-block" type="button">Button</button>
+                </div>
+            </section>
+
+            <!-- Left Panel -->
+            <div class="columns">
+                <div class="column is-four-fifths ">
+                    <!-- Inputs Here -->
+                    <section class="hero is-primary is-bold">
+                        <div class="field inputHolder">
+                            <label class="label formTitle">Name your Search:</label>
+                            <div class="control">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                        <div class="field inputHolder">
+                            <label class="label userText">Sample Text:</label>
+                            <div class="control">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column is-two-fifths">
+                                <div class="field inputHolder">
+                                    <label class="label formTitle">Select Your Font:</label>
+                                    <!-- Need to change class to "is-active" on click -->
+                                    <div class="dropdown is-inactive">
+                                        <div class="dropdown-trigger" id="dropdown-fonts">
+                                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                                <span>...</span>
+                                                <span class="icon is-small">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="dropdown-menu" id="fonts" role="menu">
+                                            <div class="dropdown-content">
+                                                <a class="dropdown-item">
+                                                    Other dropdown item
+                                                </a>
+                                                <hr class="dropdown-divider">
+                                                <a href="#" class="dropdown-item">
+                                                    With a divider
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field inputHolder">
+                                    <label class="label formTitle">Select Your Image File:</label>
+                                    <div class="file has-name is-fullwidth">
+                                        <label class="file-label">
+                                            <input class="file-input" type="file" name="resume">
+                                            <span class="file-cta">
+                                                <span class="file-icon">
+                                                    <i class="fas fa-upload"></i>
+                                                </span>
+                                                <span class="file-label">
+                                                    Choose a file…
+                                                </span>
+                                            </span>
+                                            <span class="file-name">
+                                            </span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                     
-                        <div class="colourDisplay">
-                            <!-- will delete br, there as a placeHolder for colours to be appened -->
-                            <br>  "class = colourDisplay  " <br>
-                            <img src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg" alt="">
-                        </div>
                         <br>
-                        <div class="textExamples">
+                    </section>
+
+                    <!-- Results Here -->
+                    <section class="hero is-sm is-primary is-bold">
+                        <div class="container inputHolder">
+                            <h3 class="title is-3">Here is your Style:</h3>
+                            <div class="columns colourDisplay">
+                                <div class="column" id="firstColour">Colour 1</div>
+                                <div class="column" id="secondColour">Colour 1</div>
+                                <div class="column" id="thirdColour">Colour 1</div>
+                                <div class="column" id="fourthColour">Colour 1</div>
+                                <div class="column" id="fifthColour">Colour 1</div>
+                            </div>
+                            <div class="columns textDisplay" id="resultText">USER TEXT</div>
+                            <br>
                         </div>
-                    </div>
+                    </section>
                 </div>
-                <div class="col-2 history colBox" id="colHistory">Third column
-                    <ul class="historyFonts"></ul>
+
+                <!-- Right Panel -->
+                <div class="column">
+                    <section class="hero is-sm is-primary is-bold" id="historyCol">
+                        <div class="hero-body">
+                            <div class="buttons">
+                                <button class="button is-info is-light is-fullwidth" id="clearBtn">Clear
+                                    History</button>
+                            </div>
+                            <div class="container">
+                                <aside class="menu" id="colHistory">
+                                    <ul class="menu-list historyFonts">
+                                        <li><a>Search 1</a></li>
+                                        <li><a>Search 1</a></li>
+                                    </ul>
+                                </aside>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
-    </main>
-   
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
