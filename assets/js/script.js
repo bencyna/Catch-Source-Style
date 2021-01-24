@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   getItems();
 
-  function renderFonts() {
+  function renderStoredFonts() {
     $(".historyFonts").html("");
 
     for (var p = 0; p < fontArray.length; p++) {
@@ -18,36 +18,37 @@ $(document).ready(function () {
       }
     }
     // appends the saved buttons to the third column in a list
-    for (var i = 0; i < fontArray.length; i++){
-     var font = fontArray[i];
+    for (var i = 0; i < fontArray.length; i++) {
+      var font = fontArray[i];
 
-    var li = $('<li class = "listStoredFonts">');
-    var button = $('<button type = "button" class = "fonts">').text(font);
-    button.attr("data-attribute", i);
-    li.append(button);
-    $(".historyFonts").prepend(li);
+      var li = $('<li class = "listStoredFonts">');
+      var button = $('<button type = "button" class = "storedFonts" style = "font-family: '+font+'">').text(font);
+      button.attr("data-attribute", i);
+      li.append(button);
+      console.log(font)
+      $(".historyFonts").prepend(li);
+    }
   }
-}
 
   function getItems() {
     var storedFonts = JSON.parse(localStorage.getItem("fontArray"));
     if (storedFonts !== null) {
       fontArray = storedFonts;
     }
-    renderFonts();
+    renderStoredFonts();
   }
 
   function storeFonts() {
     localStorage.setItem("fontArray", JSON.stringify(fontArray));
   }
-// pushes current font to the fontArray to be stored in localstorage
+  // pushes current font to the fontArray to be stored in localstorage
   function addFontsArray() {
     var fontName = buttonValue;
     fontArray.push(fontName);
     console.log(fontArray);
 
     storeFonts();
-    renderFonts();
+    renderStoredFonts();
   }
 
   // added css here to avoid conflict potentially when pushing
@@ -69,7 +70,6 @@ $(document).ready(function () {
         newDIv.append(text);
         $("#fonts").append(newDIv);
         // make the buttons appear their font: need some css styling here
-        $("font-items").css("font-family", $(this).text());
       }
       $(".font-items").click(function () {
         buttonValue = $(this).text();
@@ -80,25 +80,54 @@ $(document).ready(function () {
   // will need to style in css potentially
   // this function adds display sentence of font and calls addFontArray()
   function cssFamilyDisplay() {
-    $(".textExamples").empty();
+    $(".textDisplay").empty();
+
+    var sampleTextVal = $('#userInput').val()
+    console.log(sampleTextVal)
 
     var newHOne = $('<h1 class = "exampleHeader">').text(
-      "Here is what the font " + buttonValue + " looks like as a h1 element"
+      "Here is what the font '" + buttonValue + "' looks like as a h1 element: " + sampleTextVal
     );
     var newP = $("<p class = 'exampleParagraph'>").text(
-      "As a 'p' tag, " + buttonValue + " displays as this"
+      "As a 'p' tag, '" + buttonValue + "' displays as this: " + sampleTextVal
     );
     var button = $("<button type = 'button' class = 'storeStyles'>").text(
       "Like this style? Click me to save it!"
     );
 
-    $(".textExamples").css("font-family", buttonValue);
-    $(".textExamples").append(newHOne);
-    $(".textExamples").append(newP);
-    $(".textExamples").append(button);
+    $(".textDisplay").css("font-family", buttonValue);
+    console.log(buttonValue);
+    $(".textDisplay").append(newHOne);
+    $(".textDisplay").append(newP);
+    $(".textDisplay").append(button);
 
     $(".storeStyles").click(function () {
       addFontsArray();
     });
   }
+
+  $(".dropdown").click(function () {
+    $(".dropdown").toggleClass("is-inactive");
+    $(".dropdown").toggleClass("is-active");
+  });
+  $("#clearBtn").click(function (event) {
+    var element = event.target;
+    var index = element.parentElement.getAttribute("data-attribute");
+    fontArray.splice(index, fontArray.length);
+    storeFonts();
+    renderStoredFonts();
+  });
+  // $(".storedFonts").click(function(event){
+  //   event.preventDefault();
+   
+  // var fontFamCopy = "font-family: " + $(this).text() + ", sans-serif;" 
+  // console.log(fontFamCopy)
+  
+
+  // fontFamCopy.select();
+
+  // fontFamCopy.setSelectionRange(0, 99999);
+  // document.execCommand("copy");
+  // alert("Copied: " + fontFamCopy);    
+  // })
 });
