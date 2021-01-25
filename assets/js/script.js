@@ -22,10 +22,16 @@ $(document).ready(function () {
       var font = fontArray[i];
 
       var li = $('<li class = "listStoredFonts">');
-      var button = $('<button type = "button" class = "storedFonts" style = "font-family: '+font+'">').text(font);
+      var button = $(
+        '<button type = "button" class = "storedFonts" id = "font' +
+          i +
+          '" style = "font-family: ' +
+          font +
+          '">'
+      ).text(font);
       button.attr("data-attribute", i);
       li.append(button);
-      console.log(font)
+      console.log(font);
       $(".historyFonts").prepend(li);
     }
   }
@@ -41,6 +47,7 @@ $(document).ready(function () {
   function storeFonts() {
     localStorage.setItem("fontArray", JSON.stringify(fontArray));
   }
+
   // pushes current font to the fontArray to be stored in localstorage
   function addFontsArray() {
     var fontName = buttonValue;
@@ -82,18 +89,14 @@ $(document).ready(function () {
   function cssFamilyDisplay() {
     $(".textDisplay").empty();
 
-    var sampleTextVal = $('#userInput').val()
-    console.log(sampleTextVal)
+    var sampleTextVal = $("#userInput").val();
+    console.log(sampleTextVal);
 
-    var newHOne = $('<h1 class = "exampleHeader">').text(
-      "Here is what the font '" + buttonValue + "' looks like as a h1 element: " + sampleTextVal
-    );
-    var newP = $("<p class = 'exampleParagraph'>").text(
-      "As a 'p' tag, '" + buttonValue + "' displays as this: " + sampleTextVal
-    );
-    var button = $("<button type = 'button' class = 'storeStyles'>").text(
-      "Like this style? Click me to save it!"
-    );
+    var newHOne = $('<h1 class = "exampleHeader">').text(sampleTextVal);
+    var newP = $("<p class = 'exampleParagraph'>").text(sampleTextVal);
+    var button = $(
+      "<button class='button is-info is-light is-fullwidth storeStyles' id='storeStyles'>"
+    ).text("Like this style? Click me to save it!");
 
     $(".textDisplay").css("font-family", buttonValue);
     console.log(buttonValue);
@@ -117,50 +120,52 @@ $(document).ready(function () {
     storeFonts();
     renderStoredFonts();
   });
+  $(".storedFonts").click(function (element) {
+    element = $(this).text();
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+
+    var fontFamCopy = "font-family: " + $(this).text() + ", sans-serif;";
+    console.log(fontFamCopy);
+  });
   //Image Upload, Base64 encoding and into local storage code
-//Function to upload an image file  - WORKS - Needs tidying up alot
-$(function(){
-  $(":file").change(function(){
+  //Function to upload an image file  - WORKS - Needs tidying up alot
+  $(function () {
+    $(":file").change(function () {
       var fileInput = $(this)[0]; //returns a HTML DOM object by putting the [0] since it's really an associative array.
       console.log(fileInput);
       var file = fileInput.files[0]; //there is only '1' file since they are not multiple type.
       console.log(file);
 
       var reader = new FileReader();
-      reader.onload = function(event)
-       {
+      reader.onload = function (event) {
         var img = new Image(); // Create a new image.
         img.src = reader.result; //loads the details of reader.result into the img.src ""
         localStorage.theImage = reader.result; //stores the image to localStorage
         $("#fileUpload").html(img);
         console.log(img);
-      } 
+      };
 
-
-       if(this.files || this.files[0])
-       console.log(this.files);// This returns FileList with the (#imgUpload).value in it
-       {
-           reader.onload = imageIsLoaded;
-           reader.readAsDataURL(this.files[0]);
-           reader.result;
-           console.log(reader.result);//Returns as null
-           console.log(this.files[0]);
-       }
-   });
-});   
-
-//Function to change the src of the <img> tag
-      function imageIsLoaded(event){
-
-              $('#imgUp').attr('src', event.target.result);
-              console.log('#imgUpload');
-              localStorage.setItem('#fileUpload', event.target.result);// Not working - is working not sure why as yet
-              console.log(localStorage);
+      if (this.files || this.files[0]) console.log(this.files); // This returns FileList with the (#imgUpload).value in it
+      {
+        reader.onload = imageIsLoaded;
+        reader.readAsDataURL(this.files[0]);
+        reader.result;
+        console.log(reader.result); //Returns as null
+        console.log(this.files[0]);
       }
- localStorage.getItem('img');
+    });
+  });
 
+  //Function to change the src of the <img> tag
+  function imageIsLoaded(event) {
+    $("#imgUp").attr("src", event.target.result);
+    console.log("#imgUpload");
+    localStorage.setItem("#fileUpload", event.target.result); // Not working - is working not sure why as yet
+    console.log(localStorage);
+  }
+  localStorage.getItem("img");
 });
-
-
-
-
