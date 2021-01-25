@@ -22,7 +22,7 @@ $(document).ready(function () {
       var font = fontArray[i];
 
       var li = $('<li class = "listStoredFonts">');
-      var button = $('<button type = "button" class = "storedFonts" style = "font-family: '+font+'">').text(font);
+      var button = $('<button type = "button" class = "storedFonts" id = "font'+i+'" style = "font-family: '+font+'">').text(font);
       button.attr("data-attribute", i);
       li.append(button);
       console.log(font)
@@ -117,17 +117,60 @@ $(document).ready(function () {
     storeFonts();
     renderStoredFonts();
   });
-  // $(".storedFonts").click(function(event){
-  //   event.preventDefault();
-   
+  // $(".storedFonts").click(function(element){
+  //   element = $(this).text();
+  //     var $temp = $("<input>");
+  //     $("body").append($temp);
+  //     $temp.val($(element).text()).select();
+  //     document.execCommand("copy");
+  //     $temp.remove();
+
   // var fontFamCopy = "font-family: " + $(this).text() + ", sans-serif;" 
   // console.log(fontFamCopy)
-  
+    
+  // });
+  ​
+//Image Upload, Base64 encoding and into local storage code
+//Function to upload an image file  - WORKS - Needs tidying up alot
+//$(function(){
+ // $(":file").change(function(){
+      //var fileInput = $(this)[0]; //returns a HTML DOM object by putting the [0] since it's really an associative array.
+      //console.log(fileInput);
+      //var file = fileInput.files[0]; //there is only '1' file since they are not multiple type.
+      //console.log(file);
+​
+      //var reader = new FileReader();
+      //reader.onload = function(event)
+       //{
+        //var img = new Image(); // Create a new image.
+        //img.src = reader.result; //loads the details of reader.result into the img.src ""
+        //localStorage.theImage = reader.result; //stores the image to localStorage
+        //$("#fileUpload").html(img);
+        //console.log(img);
+      //} 
+​
+​
+       //if(this.files || this.files[0])
+       //console.log(this.files);// This returns FileList with the (#imgUpload).value in it
+      // {
+           //reader.onload = imageIsLoaded;
+           //reader.readAsDataURL(this.files[0]);
+          // reader.result;
+        //   console.log(reader.result);//Returns as null
+      //     console.log(this.files[0]);
+    //   }
+  // });
+//});   
+​
+//Function to change the src of the <img> tag
+      //function imageIsLoaded(event){
+           //   $('#imgUpload').attr('src', event.target.result);
+         //     console.log('#imgUpload');
+       //       localStorage.setItem('#fileUpload', event.target.result);// Not working - is working not sure why as yet
+     //         console.log(localStorage);
+   //   }
+ //localStorage.getItem('img');
+​
+//});
 
-  // fontFamCopy.select();
-
-  // fontFamCopy.setSelectionRange(0, 99999);
-  // document.execCommand("copy");
-  // alert("Copied: " + fontFamCopy);    
-  // })
 });
