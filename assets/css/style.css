@@ -1,42 +1,49 @@
-#navTitle {
-  justify-content: center;
-  font-family: "Nunito", sans-serif;
+#navTitle,
+#resultsTitle {
+    justify-content: center;
+    font-family: "Nunito", sans-serif;
 }
 
-.button.is-large {
-  font-size: 2rem;
+#mainTitle {
+    font-size: 2.5rem;
+    background-color: #00d1b2;
+    color: white;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 15px;
 }
 
 body {
-  background-color: rgba(221, 221, 221, 0.541);
+    background-color: rgba(221, 221, 221, 0.541);
 }
 
 .navbar-menu {
-  background-color: white!;
+    background-color: white!;
 }
 
 .bar {
-  border-radius: 10px;
-  font-family: "Nunito", sans-serif;
+    border-radius: 10px;
+    font-family: "Nunito", sans-serif;
 }
 
 .inputHolder {
-  margin-top: 25px;
-  margin-left: 100px;
-  margin-right: 100px;
+    margin-top: 25px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .formTitle,
 .userText {
-  color: white;
-  font-weight: normal;
+    color: white;
+    font-weight: normal;
 }
 
 #resultText {
-  font-weight: normal;
-  justify-content: center;
-  font-size: xx-large;
-  color: black;
+    font-weight: normal;
+    justify-content: center;
+    font-size: xx-large;
+    color: black;
 }
 
 #firstColour,
@@ -44,43 +51,45 @@ body {
 #thirdColour,
 #fourthColour,
 #fifthColour {
-  background-color: rgb(238, 130, 135);
-  border-color: black;
-  border-style: solid;
-  border-width: thin;
-  border-radius: 15px;
-  height: 100px;
+    background-color: rgb(238, 130, 135);
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 15px;
+    height: 100px;
 }
 
 #firstColour {
-  background-color: rgb(238, 130, 135);
+    background-color: rgb(238, 130, 135);
 }
 
 #secondColour {
-  background-color: violet;
+    background-color: violet;
 }
 
 #thirdColour {
-  background-color: rgb(130, 238, 148);
+    background-color: rgb(130, 238, 148);
 }
 
 #fourthColour {
-  background-color: rgb(130, 132, 238);
+    background-color: rgb(130, 132, 238);
 }
 
 #fifthColour {
-  background-color: rgb(208, 226, 49);
+    background-color: rgb(208, 226, 49);
 }
+
 h1 {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .storedFonts {
-  border-radius: 10px;
-  border: 0px;
-  margin: 2px;
+    border-radius: 10px;
+    border: 0px;
+    margin: 2px;
 }
+
 .storedFonts:hover {
-  font-size: 17px;
-  transition: all 0.3s ease-in-out;
+    font-size: 17px;
+    transition: all 0.3s ease-in-out;
 }
