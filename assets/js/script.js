@@ -86,15 +86,10 @@ $(document).ready(function() {
         var sampleTextVal = $('#userInput').val()
         console.log(sampleTextVal)
 
-        var newHOne = $('<h1 class = "exampleHeader">').text(
-            "Here is what the font '" + buttonValue + "' looks like as a h1 element: " + sampleTextVal
-        );
-        var newP = $("<p class = 'exampleParagraph'>").text(
-            "As a 'p' tag, '" + buttonValue + "' displays as this: " + sampleTextVal
-        );
-        var button = $("<button type = 'button' class = 'storeStyles'>").text(
-            "Like this style? Click me to save it!"
-        );
+        var newHOne = $('<h1 class = "exampleHeader">').text(sampleTextVal);
+        var newP = $("<p class = 'exampleParagraph'>").text(sampleTextVal);
+        var button = $("<button class='button is-info is-light is-fullwidth storeStyles' id='storeStyles'>").text(
+            "Like this style? Click me to save it!");
 
         $(".textDisplay").css("font-family", buttonValue);
         console.log(buttonValue);
