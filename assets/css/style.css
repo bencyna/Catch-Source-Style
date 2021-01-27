@@ -93,3 +93,11 @@ h1 {
     font-size: 17px;
     transition: all 0.3s ease-in-out;
 }
+
+.copy-success {
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(238, 246, 252);
+    color: rgb(29, 114, 170);
+}

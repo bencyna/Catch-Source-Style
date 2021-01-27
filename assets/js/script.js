@@ -11,7 +11,7 @@ $(document).ready(function () {
     $(".historyFonts").html("");
 
     for (var p = 0; p < fontArray.length; p++) {
-      for (var j = 0; j < i; j++) {
+      for (var j = 0; j < p; j++) {
         if (fontArray[p] === fontArray[j] || fontArray[p] == "") {
           fontArray.splice(p, 1); // removes duplicates and empty buttons if theres an error
         }
@@ -31,7 +31,6 @@ $(document).ready(function () {
       ).text(font);
       button.attr("data-attribute", i);
       li.append(button);
-      console.log(font);
       $(".historyFonts").prepend(li);
     }
   }
@@ -120,17 +119,30 @@ $(document).ready(function () {
     storeFonts();
     renderStoredFonts();
   });
-  $(".storedFonts").click(function (element) {
-    element = $(this).text();
+  function copyToClipboard(element) {
+    element = $(this);
+    console.log(element);
     var $temp = $("<input>");
     $("body").append($temp);
-    $temp.val($(element).text()).select();
+    $temp.val("font-family: '" + $(element).text() + "', sans-serif").select();
     document.execCommand("copy");
     $temp.remove();
 
-    var fontFamCopy = "font-family: " + $(this).text() + ", sans-serif;";
-    console.log(fontFamCopy);
-  });
+    var div = $("<div class = 'copy-success is-fullwidth'>");
+    div.text("Copied: " + "font-family: '" + $(element).text() + "', sans-serif");
+    $("#historyCol").append(div);
+    
+    var timeLeft = 5;
+    setInterval(function(){
+      timeLeft--;
+
+      if (timeLeft === 0) {
+        div.hide()
+      }
+    }, 1000);
+    
+  }
+  $(".hero-body").on("click", ".storedFonts", copyToClipboard);
   //Image Upload, Base64 encoding and into local storage code
   //Function to upload an image file  - WORKS - Needs tidying up alot
   $(function () {
