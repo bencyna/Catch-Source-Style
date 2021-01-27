@@ -46,17 +46,13 @@ body {
     color: black;
 }
 
-#firstColour,
-#secondColour,
-#thirdColour,
-#fourthColour,
-#fifthColour {
-    background-color: rgb(238, 130, 135);
+.gotColours {
     border-color: black;
     border-style: solid;
     border-width: thin;
     border-radius: 15px;
     height: 100px;
+    text-align: center;
 }
 
 #firstColour {
@@ -83,12 +79,14 @@ h1 {
     font-weight: bold;
 }
 
+.storedColours,
 .storedFonts {
     border-radius: 10px;
     border: 0px;
     margin: 2px;
 }
 
+.storedColours:hover,
 .storedFonts:hover {
     font-size: 17px;
     transition: all 0.3s ease-in-out;
@@ -100,4 +98,8 @@ h1 {
     border-radius: 10px;
     background-color: rgb(238, 246, 252);
     color: rgb(29, 114, 170);
+}
+
+.historyColours {
+    margin: 5px;
 }
