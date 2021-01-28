@@ -35,7 +35,7 @@ $(document).ready(function () {
       $(".historyFonts").prepend(li);
     }
   }
-  // same as above but works for stored colours 
+  // same as above but works for stored colours
   function renderStoredColours() {
     $(".historyColours").html("");
 
@@ -62,7 +62,7 @@ $(document).ready(function () {
       $(".historyColours").prepend(li);
     }
   }
-// added colours to the getItems() function
+  // added colours to the getItems() function
   function getItems() {
     var storedFonts = JSON.parse(localStorage.getItem("fontArray"));
     if (storedFonts !== null) {
@@ -95,7 +95,7 @@ $(document).ready(function () {
   }
 
   // added css here to avoid conflict potentially when pushing
-  $(".dropdown-menu").css({ "max-height": "450px", overflow: "scroll" });
+  $(".dropdown-menu").css({ "max-height": "240px", overflow: "scroll" });
   //ajax call
   $.ajax({
     url: queryURL,
@@ -105,7 +105,7 @@ $(document).ready(function () {
       $(dropdown).empty();
 
       for (var i = 0; i < font.items.length; i++) {
-        var text = $('<button type = "button" class = "font-items">').text(
+        var text = $('<button type = "button" class = "font-items is-info" id = "btnId">').text(
           font.items[i].family
         );
 
@@ -125,10 +125,12 @@ $(document).ready(function () {
   function cssFamilyDisplay() {
     $(".textDisplay").empty();
 
-    var sampleTextVal = $("#userInput").val();
+    var sampleTextVal = $("#paragraphInput").val();
+    var sampleTextHead = $("#headerInput").val();
+
     console.log(sampleTextVal);
 
-    var newHOne = $('<h1 class = "exampleHeader">').text(sampleTextVal);
+    var newHOne = $('<h1 class = "exampleHeader">').text(sampleTextHead);
     var newP = $("<p class = 'exampleParagraph'>").text(sampleTextVal);
     var button = $(
       "<button class='button is-info is-light is-fullwidth storeStyles' id='storeStyles'>"
@@ -153,13 +155,13 @@ $(document).ready(function () {
     var element = event.target;
     var index = element.parentElement.getAttribute("data-attribute");
     fontArray.splice(index, fontArray.length);
-    colourArray.splice(index, colourArray.length)
+    colourArray.splice(index, colourArray.length);
     storeFonts();
     renderStoredFonts();
     storeColours();
     renderStoredColours();
   });
-  function copyToClipboard(element) {
+  function copyFontsToClipboard(element) {
     element = $(this);
     console.log(element);
     var $temp = $("<input>");
@@ -183,7 +185,7 @@ $(document).ready(function () {
       }
     }, 1000);
   }
-  $(".hero-body").on("click", ".storedFonts", copyToClipboard);
+  $(".hero-body").on("click", ".storedFonts", copyFontsToClipboard);
   //Image Upload, Base64 encoding and into local storage code
   //Function to upload an image file  - WORKS - Needs tidying up alot
   $(function () {
@@ -233,6 +235,7 @@ $(document).ready(function () {
         data: formData,
       };
       $.ajax(settings).done(function (response) {
+        $(".colourDisplay").empty();
         var imageColors = JSON.parse(response).result.colors.image_colors;
         localStorage.setItem("imageColors", JSON.stringify(imageColors));
 
@@ -246,17 +249,13 @@ $(document).ready(function () {
           colourButtons.text(cssColourCode);
           $(".colourDisplay").append(colourButtons);
         }
-        var button = $(
-          "<button class='button is-info is-light is-fullwidth storeColours' id='storeColours'>"
-        ).text("Like the colour? Click it to save it!");
-        $(".colourDisplay").append(button);
       });
     }
   });
   // adds clicked colours to coloursArray, seperate to fonts because they occur at different times
   function addColoursArray() {
     var colourStyles = $(this).text();
-    console.log(colourStyles)
+    console.log(colourStyles);
     colourArray.push(colourStyles);
     console.log(colourArray);
 
@@ -264,4 +263,28 @@ $(document).ready(function () {
     renderStoredColours();
   }
   $(document).on("click", ".gotColours", addColoursArray);
+
+  function copyColoursToClipboard(colour) {
+    colour = $(this);
+    console.log(colour);
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val("background-color: " + $(colour).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+
+    var div = $("<div class = 'copy-success is-fullwidth'>");
+    div.text("Copied: " + "background-colour: " + $(colour).text());
+    $("#historyCol").append(div);
+
+    var timeLeft = 5;
+    setInterval(function () {
+      timeLeft--;
+
+      if (timeLeft === 0) {
+        div.hide();
+      }
+    }, 1000);
+  }
+  $(".hero-body").on("click", ".storedColours", copyColoursToClipboard);
 });
