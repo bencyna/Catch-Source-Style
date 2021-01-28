@@ -88,7 +88,7 @@
                   >H1 Header Style Sample Text:</label
                 >
                 <div class="control">
-                  <input class="input" type="text" />
+                  <input class="input" id="headerInput" type="text" />
                 </div>
               </div>
               <div class="field inputHolder">
@@ -96,7 +96,7 @@
                   >Paragraph Style Sample Text:</label
                 >
                 <div class="control">
-                  <input class="input" id="userInput" type="text" />
+                  <input class="input" id="paragraphInput" type="text" />
                 </div>
               </div>
               <div class="columns">
@@ -118,11 +118,6 @@
                         </button>
                       </div>
                       <div class="dropdown-menu" id="fonts" role="menu">
-                        <div class="dropdown-content">
-                          <a class="dropdown-item"> Other dropdown item </a>
-                          <hr class="dropdown-divider" />
-                          <a href="#" class="dropdown-item"> With a divider </a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -147,7 +142,7 @@
                           <span class="file-label"> Choose a file… </span>
                         </span>
                         <span class="img-upload">
-                          <img id="imgUp" src="#" alt="Image upload" />
+                          <img id="imgUp" src="./assets/img/colorPicker.gif" alt="Image upload" />
                         </span>
                       </label>
                     </div>
@@ -163,8 +158,8 @@
                 <h3 class="title is-3" id="resultsTitle">
                   Here is your Style:
                 </h3>
-                <div class="columns colourDisplay">
-                </div>
+                <span title="Like this colour? Click it to save it!" class="columns colourDisplay is-mobile">
+                </span>
                 <br />
                 <div class="textDisplay" id="resultText">
                   <br />
@@ -186,7 +181,7 @@
                     Clear History
                   </button>
                 </div>
-                <div class="container">
+                <div title = "Copy me to clipboard" class="container">
                   <aside class="menu" id="colHistory">
                     <ul class="menu-list historyFonts"></ul>
                     <ul class="menu-list historyColours"></ul>

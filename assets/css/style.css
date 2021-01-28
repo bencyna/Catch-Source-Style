@@ -41,7 +41,7 @@ body {
 
 #resultText {
     font-weight: normal;
-    justify-content: center;
+    text-align: center;
     font-size: xx-large;
     color: black;
 }
@@ -102,4 +102,8 @@ h1 {
 
 .historyColours {
     margin: 5px;
+}
+
+#fonts{
+    background-color: white;
 }
