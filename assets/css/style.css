@@ -1,109 +1,113 @@
 #navTitle,
 #resultsTitle {
-    justify-content: center;
-    font-family: "Nunito", sans-serif;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
 }
 
 #mainTitle {
-    font-size: 2.5rem;
-    background-color: #00d1b2;
-    color: white;
-    text-align: center;
-    padding-left: 40px;
-    padding-right: 40px;
-    border-radius: 15px;
+  font-size: 2.5rem;
+  background-color: #00d1b2;
+  color: white;
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 15px;
 }
 
 body {
-    background-color: rgba(221, 221, 221, 0.541);
+  background-color: rgba(221, 221, 221, 0.541);
 }
 
 .navbar-menu {
-    background-color: white!;
+  background-color: white!;
 }
 
 .bar {
-    border-radius: 10px;
-    font-family: "Nunito", sans-serif;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
 }
 
 .inputHolder {
-    margin-top: 25px;
-    margin-left: 100px;
-    margin-right: 100px;
+  margin-top: 25px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .formTitle,
 .userText {
-    color: white;
-    font-weight: normal;
+  color: white;
+  font-weight: normal;
 }
 
 #resultText {
-    font-weight: normal;
-    text-align: center;
-    font-size: xx-large;
-    color: black;
+  font-weight: normal;
+  text-align: center;
+  font-size: xx-large;
+  color: black;
 }
 
 .gotColours {
-    border-color: black;
-    border-style: solid;
-    border-width: thin;
-    border-radius: 15px;
-    height: 100px;
-    text-align: center;
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 15px;
+  height: 100px;
+  text-align: center;
 }
 
 #firstColour {
-    background-color: rgb(238, 130, 135);
+  background-color: rgb(238, 130, 135);
 }
 
 #secondColour {
-    background-color: violet;
+  background-color: violet;
 }
 
 #thirdColour {
-    background-color: rgb(130, 238, 148);
+  background-color: rgb(130, 238, 148);
 }
 
 #fourthColour {
-    background-color: rgb(130, 132, 238);
+  background-color: rgb(130, 132, 238);
 }
 
 #fifthColour {
-    background-color: rgb(208, 226, 49);
+  background-color: rgb(208, 226, 49);
 }
 
 h1 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .storedColours,
 .storedFonts {
-    border-radius: 10px;
-    border: 0px;
-    margin: 2px;
+  border-radius: 10px;
+  border: 0px;
+  margin: 2px;
 }
 
 .storedColours:hover,
 .storedFonts:hover {
-    font-size: 17px;
-    transition: all 0.3s ease-in-out;
+  font-size: 17px;
+  transition: all 0.3s ease-in-out;
 }
 
 .copy-success {
-    text-align: center;
-    margin: 10px;
-    border-radius: 10px;
-    background-color: rgb(238, 246, 252);
-    color: rgb(29, 114, 170);
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: rgb(238, 246, 252);
+  color: rgb(29, 114, 170);
 }
 
 .historyColours {
-    margin: 5px;
+  margin: 5px;
 }
 
-#fonts{
-    background-color: white;
+#fonts {
+  background-color: white;
+}
+.dropdown-menu {
+  max-height: 240px;
+  overflow: scroll;
 }
