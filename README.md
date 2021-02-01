@@ -14,6 +14,10 @@ Save your style choices to come back to later.
 
 
 # Usage
+![Image of weather display](./assets//img/screenshot1.jpg)
+
+The image above shows the usage of the two apis. The exmaple text is shown in the font chosen by the user and the primary colours can be seen above.
+
 The web app is free to use for all web designers and developers. We ask that you acknowledge us in your meta data information as a courtesy.
 We welcome any inputs and suggestions to develop the code further, but please do not modifiy the original code.
 
